@@ -96,7 +96,7 @@ export default function Home() {
           </div>
           <div className="lg:w-2/5 before:content-pattern3 sm:before:content-[''] flex text-center items-center lg:items-start sm:text-left flex-col text-white  gap-8">
             <p className='text-4xl text-white-800'>It just <strong>works.</strong></p>
-            <q className='w-[90%] sm:w-[75%] text-center lg:text-justify'>Viva is seriously the best thing that's happened to my small business. It's easy to use, saves me tons of time, and I love it. If you're a solopreneur who needs a hand, this app is a game-changer!</q>
+            <q className='w-[90%] sm:w-[75%] text-center lg:text-justify'>Viva is seriously the best thing that&apos;s happened to my small business. It&apos;s easy to use, saves me tons of time, and I love it. If you&apos;re a solopreneur who needs a hand, this app is a game-changer!</q>
             <div className=''>
               <p className='text-2xl text-white-800'>Oluwakemi Omoyeni</p>
               <p>CEO, Viva Technologies</p>
