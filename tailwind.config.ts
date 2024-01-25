@@ -17,6 +17,9 @@ const config: Config = {
           500: '#0070F3',
           600: '#2F6FEB',
         },
+        grey:{
+          400: 'hsl(30, 33%, 93%)'
+        },
         
         success:{
           
@@ -24,7 +27,8 @@ const config: Config = {
       },
       content:{
         'pattern': "url('/pattern-curved-line-1.svg')",
-        'pattern2': "url('/pattern-curved-line-2.svg')"
+        'pattern2': "url('/pattern-curved-line-2.svg')",
+        'pattern3': "url('/pattern-curved-line-3.svg')",
       },
       rotate: {
         '14': '140deg',

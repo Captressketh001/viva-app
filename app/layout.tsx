@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import '@/app/ui/globals.css';
 
-import { inter } from '@/app/ui/font'
+import { epilogue } from '@/app/ui/font'
 
 export const metadata: Metadata = {
   title: 'Viva',
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${epilogue.className} antialiased`}>{children}</body>
     </html>
   )
 }
