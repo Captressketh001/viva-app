@@ -7,8 +7,10 @@ import { lusitana } from '@/app/ui/font';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faXTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
   const getCurrentYear = () => {
     return new Date().getFullYear()
   }
@@ -24,7 +26,7 @@ export default function Home() {
             height={24}
             priority
           />
-          <Button>Request Beta Access</Button>
+          <Button onClick={() => router.push('/login')}>Request Beta Access</Button>
         </div>
         <div className='flex flex-col w-[85%] lg:w-[80%] lg:flex-row  items-center gap-10 sm:mt-5'>
           <div className='flex flex-col md:flex-row lg:w-4/5 gap-4'>
@@ -34,7 +36,7 @@ export default function Home() {
               </p>
               <p className='md:w-3/4 text-justify'>Say goodbye to messy spreadsheets and hello to Viva, the all-in-one app built for busy service providers like you.
               </p>
-              <Button className='flex items-center gap-5 self-start rounded-lg bg-white-500 px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-blue-400 md:text-base'>Request Beta Access</Button>
+              <Button onClick={() => router.push('/login')} className='flex items-center gap-5 self-start rounded-lg bg-white-500 px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-blue-400 md:text-base'>Request Beta Access</Button>
 
             </div>
             <div className='md:relative md:-z-50 lg:right-24'>
