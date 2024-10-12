@@ -7,7 +7,7 @@ import { z } from 'zod';
 import Link from 'next/link'
 import { useAuth } from '@/app/context/GlobalProvider'
 import { useRouter } from 'next/navigation'
-import { signIn } from '@/app/lib/appWrite'
+import { signIn, getCurrentUser } from '@/app/lib/appWrite'
 import toast from 'react-hot-toast'
 
 const schema = z.object({
@@ -40,8 +40,8 @@ export default function LoginForm (){
       const onSubmit = async(data: FormValues) => {
         setIsSubmitting(true)
         try {
-            const result = await signIn(data.email, data.password)
-            console.log(result)
+            await signIn(data.email, data.password)
+            const result = await getCurrentUser()
             setUser(result)
             setisLoggedIn(true)
             router.replace('/dashboard')
