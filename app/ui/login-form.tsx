@@ -1,8 +1,14 @@
+'use client'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import InputForm from "@/app/ui/inputForm";
 import { z } from 'zod';
 import Link from 'next/link'
+import { useAuth } from '@/app/context/GlobalProvider'
+import { useRouter } from 'next/navigation'
+import { signIn } from '@/app/lib/appWrite'
+import toast from 'react-hot-toast'
 
 const schema = z.object({
   email: z
@@ -21,6 +27,9 @@ type FormValues = {
 };
 
 export default function LoginForm (){
+    const router = useRouter()
+    const { setisLoggedIn, setUser } = useAuth()
+    const [isSubmitting, setIsSubmitting] = useState(false)
     const {
         register,
         handleSubmit,
@@ -28,9 +37,20 @@ export default function LoginForm (){
       } = useForm<FormValues>({
         resolver: zodResolver(schema),
       });
-    
-      const onSubmit = (data: FormValues) => {
-        console.log(data);
+      const onSubmit = async(data: FormValues) => {
+        setIsSubmitting(true)
+        try {
+            const result = await signIn(data.email, data.password)
+            console.log(result)
+            setUser(result)
+            setisLoggedIn(true)
+            router.replace('/dashboard')
+            toast.success('Login Successful!')
+        } catch (error: any) {
+            toast.error(error.message)
+        } finally {
+            setIsSubmitting(false)
+        }
       };
     return (
         <form
@@ -54,9 +74,10 @@ export default function LoginForm (){
           </div>
           <button
             type="submit"
+            disabled={isSubmitting === true}
             className="bg-violet text-white py-4 font-bold  px-4 rounded-lg"
           >
-            Login
+            {isSubmitting ? 'Logging in...' : 'Login'}
           </button>
           <p className="text-center text-xs">Don&apos;t have an account? <Link href="/sign-up" className="underline font-bold">Sign Up</Link></p>
         </form>

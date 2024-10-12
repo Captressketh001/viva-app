@@ -1,8 +1,13 @@
+import { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import InputForm from "@/app/ui/inputForm";
 import { z } from 'zod';
 import Link from 'next/link'
+import { createUser } from '../lib/appWrite';
+import toast from 'react-hot-toast';
+import { useAuth } from '@/app/context/GlobalProvider'
+import { useRouter } from 'next/navigation'
 
 const schema = z.object({
   email: z
@@ -21,11 +26,15 @@ const schema = z.object({
 
 type FormValues = {
   email: string;
-  username: string | number;
+  username: string;
   password: string;
 };
 
 export default function SignupForm (){
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const router = useRouter()
+
     const {
         register,
         handleSubmit,
@@ -34,8 +43,16 @@ export default function SignupForm (){
         resolver: zodResolver(schema),
       });
     
-      const onSubmit = (data: FormValues) => {
-        console.log(data);
+      const onSubmit = async(data: FormValues) => {
+        setIsSubmitting(true)
+        try {
+            await createUser(data.email, data.password, data.username)
+            router.replace('/login')
+        } catch (error: any) {
+            toast.error(error.message)
+        } finally {
+            setIsSubmitting(false)
+        }
       };
     return (
         <form
@@ -65,9 +82,10 @@ export default function SignupForm (){
           </div>
           <button
             type="submit"
+            disabled={isSubmitting === true}
             className="bg-violet text-white py-4 font-bold  px-4 rounded-lg"
           >
-            Create Account
+           {isSubmitting ? 'Creating...' : 'Create Account'} 
           </button>
           <p className="text-center text-xs">Already have an account? <Link href="/login" className="underline font-bold">Login</Link></p>
         </form>

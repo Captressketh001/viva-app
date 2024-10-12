@@ -4,6 +4,7 @@ import '@/app/ui/globals.css';
 import { Toaster  } from "react-hot-toast";
 
 import { epilogue } from '@/app/ui/font'
+import { AuthProvider } from '@/app/context/GlobalProvider'
 
 export const metadata: Metadata = {
   title: 'Viva',
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${epilogue.className} antialiased`}>
-        {children}
-        <Toaster/>
+        <AuthProvider>
+          {children}
+          <Toaster/>
+        </AuthProvider>
       </body>
     </html>
   )

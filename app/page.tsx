@@ -8,12 +8,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faXTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { useRouter } from 'next/navigation'
+import { useAuth } from '@/app/context/GlobalProvider'
+import { redirect } from 'next/navigation'
 
 export default function Home() {
+  const { isLoading, isLoggedIn} = useAuth()
   const router = useRouter()
   const getCurrentYear = () => {
     return new Date().getFullYear()
   }
+  if (!isLoading && isLoggedIn) return redirect('/dashboard')
   return (
     <>
       <main className="flex min-h-screen flex-col items-center mx-auto m-4">
