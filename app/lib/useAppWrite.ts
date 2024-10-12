@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Alert } from "react-native"
+import toast from 'react-hot-toast'
 
 type FnType = () => Promise<any>;
 
@@ -14,7 +14,7 @@ const useAppWrite = (fn: FnType) => {
           const response = await fn()
           setData(response)
         } catch (error: any) {
-          Alert.alert('Error', error.message)
+          toast.error(error.message)
         } finally {
           setIsLoading(false)
         }
