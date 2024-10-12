@@ -43,7 +43,7 @@ export default function Home() {
                 alt='Hero Image Desktop'
                 width={300}
                 height={6}
-                className='hidden md:block '
+                className='hidden md:block'
               />
               <Image
                 src='/image-hero-landscape.png'
