@@ -83,7 +83,7 @@ export default function SignupForm (){
           <button
             type="submit"
             disabled={isSubmitting === true}
-            className="bg-violet text-white py-4 font-bold  px-4 rounded-lg"
+            className="bg-pink text-white py-4 font-bold  px-4 rounded-lg"
           >
            {isSubmitting ? 'Creating...' : 'Create Account'} 
           </button>

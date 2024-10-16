@@ -17,7 +17,7 @@ export default function Home() {
   const getCurrentYear = () => {
     return new Date().getFullYear()
   }
-  if (!isLoading && isLoggedIn) return redirect('/dashboard')
+  if (!isLoading && isLoggedIn) return redirect('/')
   return (
     <>
       <main className="flex min-h-screen flex-col items-center mx-auto m-4">
