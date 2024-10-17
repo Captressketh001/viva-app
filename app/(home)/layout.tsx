@@ -1,9 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
-
-
-const SideNav = dynamic(() => import("@/app/ui/side-nav"), { ssr: false });
-const MobileSideNav = dynamic(() => import("@/app/ui/mobile-side-nav"), { ssr: false });
+import SideNav from "@/app/ui/side-nav"
+import MobileSideNav from "@/app/ui/mobile-side-nav"
 export default function DashboardLayout({
     children,
   }: {
@@ -12,7 +10,7 @@ export default function DashboardLayout({
     return (
       <div className="flex w-full h-full ">
         <MobileSideNav />
-        <SideNav />
+        <SideNav /> 
         <div className="flex-1 px-4 py-6 md:px-10 md:py-8  overflow-scroll">
           {children}
         </div>

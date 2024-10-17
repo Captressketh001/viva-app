@@ -8,53 +8,43 @@ import { useOnClickOutside } from 'usehooks-ts'
 
 import { cn } from '@/app/lib/utils'
 
-import {
-    ArrowFatLinesLeft,
-    ArrowsDownUp,
-    ChartDonut,
-    House,
-    Jar,
-    Logo,
-    Receipt,
-    ShortLogo,
-  } from '@/public/icon'
-  
+import { ArrowsDownUp, ChartDonut, House, Jar, Receipt, ShortLogo, Logo, ArrowFatLinesLeft } from '@/public/icon'
   
   const NAV_LINKS = [
     {
       id: 0,
       name: 'Overview',
-      icon: <House />,
+      icon: <House/> ,
       link: '/',
     },
     {
       id: 1,
       name: 'Transactions',
-      icon: <ArrowsDownUp />,
+      icon: <ArrowsDownUp/>,
       link: '/transactions',
     },
     {
       id: 2,
       name: 'Budgets',
-      icon: <ChartDonut />,
+      icon: <ChartDonut/>,
       link: '/budgets',
     },
     {
       id: 3,
       name: 'Pots',
-      icon: <Jar />,
+      icon: <Jar/>,
       link: '/pots',
     },
     {
       id: 4,
       name: 'Recurring bills',
-      icon: <Receipt />,
+      icon: <Receipt/>,
       link: '/recurring-bills',
     },
   ] as const
   type NavLinkType = (typeof NAV_LINKS)[number]
   
-  export default function SideNav() {
+export default function SideNav() {
     const [isActive, setActive] = React.useState<boolean>(false)
   const ref = useRef(null)
 
@@ -140,7 +130,7 @@ import {
       </motion.button>
     </motion.div>
   )
-  }
+}
   
   function NavLink({ link, isActive }: { link: NavLinkType; isActive: boolean }) {
     const pathname = usePathname()

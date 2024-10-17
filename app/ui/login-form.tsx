@@ -44,7 +44,7 @@ export default function LoginForm (){
             const result = await getCurrentUser()
             setUser(result)
             setisLoggedIn(true)
-            router.replace('/dashboard')
+            router.push('/dashboard')
             toast.success('Login Successful!')
         } catch (error: any) {
             toast.error(error.message)
