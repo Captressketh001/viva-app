@@ -10,7 +10,7 @@ export default function AuthLayout({
                 <Image
                     src={VivaLight}
                     alt="Viva Logo"
-                    className="dark:invert"
+                    className=""
                     width={100}
                     height={24}
                     priority

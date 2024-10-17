@@ -5,40 +5,42 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useRef } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
-
+import Image from 'next/image'
 import { cn } from '@/app/lib/utils'
+import { ChartPieIcon, HomeIcon, ArrowsUpDownIcon, DocumentCurrencyDollarIcon, WalletIcon, ArrowLeftCircleIcon } from '@heroicons/react/24/solid'
+import Logo from '@/public/viva-light.svg'
+import ShortLogo from '@/public/viva-logo-short-white.svg'
 
-import { ArrowsDownUp, ChartDonut, House, Jar, Receipt, ShortLogo, Logo, ArrowFatLinesLeft } from '@/public/icon'
   
   const NAV_LINKS = [
     {
       id: 0,
       name: 'Overview',
-      icon: <House/> ,
+      icon: <HomeIcon className="w-5 h-5"/> ,
       link: '/',
     },
     {
       id: 1,
       name: 'Transactions',
-      icon: <ArrowsDownUp/>,
+      icon: <ArrowsUpDownIcon className="w-5 h-5"/>,
       link: '/transactions',
     },
     {
       id: 2,
       name: 'Budgets',
-      icon: <ChartDonut/>,
+      icon: <ChartPieIcon className="w-5 h-5" />,
       link: '/budgets',
     },
     {
       id: 3,
       name: 'Pots',
-      icon: <Jar/>,
+      icon: <DocumentCurrencyDollarIcon className="w-5 h-5"/>,
       link: '/pots',
     },
     {
       id: 4,
       name: 'Recurring bills',
-      icon: <Receipt/>,
+      icon: <WalletIcon className="w-5 h-5"/>,
       link: '/recurring-bills',
     },
   ] as const
@@ -77,7 +79,8 @@ export default function SideNav() {
               transition={{ duration: 0.3 }}
             >
               <Link href="/">
-                <Logo />
+                <Image src={Logo} alt="logo" width={100}
+                    height={24}/>
               </Link>
             </motion.div>
           ) : (
@@ -89,7 +92,8 @@ export default function SideNav() {
               transition={{ duration: 0.3 }}
             >
               <Link href="/">
-                <ShortLogo />
+                <Image src={ShortLogo} alt="logo" width={100}
+                    height={24}/>
               </Link>
             </motion.div>
           )}
@@ -117,7 +121,7 @@ export default function SideNav() {
           }}
           transition={{ duration: 0.3 }}
         >
-          <ArrowFatLinesLeft />
+          <ArrowLeftCircleIcon className="w-10 h-10" />
         </motion.div>
         <motion.p
           initial={{ opacity: 0 }}
