@@ -17,7 +17,7 @@ import {
     Logo,
     Receipt,
     ShortLogo,
-  } from '@/app/ui/icon'
+  } from '@/public/icon'
   
   
   const NAV_LINKS = [

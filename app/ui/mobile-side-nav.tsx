@@ -6,7 +6,7 @@ import React from 'react'
 
 import { cn } from '@/app/lib/utils'
 
-import { ArrowsDownUp, ChartDonut, House, Jar, Receipt } from '@/app/ui/icon'
+import { ArrowsDownUp, ChartDonut, House, Jar, Receipt } from '@/public/icon'
 
 const NAV_LINKS = [
   {
