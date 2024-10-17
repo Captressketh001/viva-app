@@ -26,7 +26,7 @@ import IconEye from '@/public/icon-eye.svg'
 import EyeSlash from '@/public/eye-slash.svg'
 import Logo from '@/public/viva-light.svg'
 import Eye from '@/public/eye.svg'
-import ShortLogo from '@/public/viva-logo-short.svg'
+import ShortLogo from '@/public/viva-logo-short-white.svg'
 import Sort from '@/public/sort.svg'
 import Filter from '@/public/filter.svg'
 import Warehouse from '@/public/warehouse.svg'
@@ -34,10 +34,7 @@ import MusicNote from '@/public/music-note.svg'
 import ArrowFatLinesLeft from '@/public/arrow-fat-line-left.svg'
 
 
-
-
-
-const Icons =  {
+export {
   ShortLogo,
   Eye,
   Logo,
@@ -72,4 +69,4 @@ const Icons =  {
   Jar
 };
 
-export default Icons
+

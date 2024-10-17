@@ -8,38 +8,47 @@ import { useOnClickOutside } from 'usehooks-ts'
 
 import { cn } from '@/app/lib/utils'
 
-import Icons from '@/app/ui/icon'
+import {
+    ArrowFatLinesLeft,
+    ArrowsDownUp,
+    ChartDonut,
+    House,
+    Jar,
+    Logo,
+    Receipt,
+    ShortLogo,
+  } from '@/app/ui/icon'
   
-
+  
   const NAV_LINKS = [
     {
       id: 0,
       name: 'Overview',
-      icon: <Icons.House />,
+      icon: <House />,
       link: '/',
     },
     {
       id: 1,
       name: 'Transactions',
-      icon: <Icons.ArrowsDownUp />,
+      icon: <ArrowsDownUp />,
       link: '/transactions',
     },
     {
       id: 2,
       name: 'Budgets',
-      icon: <Icons.ChartDonut />,
+      icon: <ChartDonut />,
       link: '/budgets',
     },
     {
       id: 3,
       name: 'Pots',
-      icon: <Icons.Jar />,
+      icon: <Jar />,
       link: '/pots',
     },
     {
       id: 4,
       name: 'Recurring bills',
-      icon: <Icons.Receipt />,
+      icon: <Receipt />,
       link: '/recurring-bills',
     },
   ] as const
@@ -78,7 +87,7 @@ import Icons from '@/app/ui/icon'
               transition={{ duration: 0.3 }}
             >
               <Link href="/">
-                <Icons.Logo />
+                <Logo />
               </Link>
             </motion.div>
           ) : (
@@ -90,7 +99,7 @@ import Icons from '@/app/ui/icon'
               transition={{ duration: 0.3 }}
             >
               <Link href="/">
-                <Icons.ShortLogo />
+                <ShortLogo />
               </Link>
             </motion.div>
           )}
@@ -118,7 +127,7 @@ import Icons from '@/app/ui/icon'
           }}
           transition={{ duration: 0.3 }}
         >
-          <Icons.ArrowFatLinesLeft />
+          <ArrowFatLinesLeft />
         </motion.div>
         <motion.p
           initial={{ opacity: 0 }}
