@@ -1,7 +1,7 @@
 'use client'
 import dynamic from 'next/dynamic'
-import SideNav from "@/app/ui/side-nav"
-import MobileSideNav from "@/app/ui/mobile-side-nav"
+const SideNav = dynamic(() => import("@/app/ui/side-nav"), { ssr: false })
+const MobileSideNav = dynamic(() => import("@/app/ui/mobile-side-nav"), { ssr: false })
 export default function DashboardLayout({
     children,
   }: {
