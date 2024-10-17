@@ -1,3 +1,4 @@
+import React from 'react'
 const CaretRight = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
@@ -571,7 +572,7 @@ const ShortLogo = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 
-export {
+const Icons =  {
   ShortLogo,
   Eye,
   Logo,
@@ -605,3 +606,5 @@ export {
   BulletList,
   Jar
 };
+
+export default Icons

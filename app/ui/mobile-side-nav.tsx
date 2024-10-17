@@ -6,37 +6,37 @@ import React from 'react'
 
 import { cn } from '@/app/lib/utils'
 
-import { ArrowsDownUp, ChartDonut, House, Jar, Receipt } from '@/app/ui/icon'
+import Icons from '@/app/ui/icon'
 
 const NAV_LINKS = [
   {
     id: 0,
     name: 'Overview',
-    icon: <House />,
+    icon: <Icons.House />,
     link: '/',
   },
   {
     id: 1,
     name: 'Transactions',
-    icon: <ArrowsDownUp />,
+    icon: <Icons.ArrowsDownUp />,
     link: '/transactions',
   },
   {
     id: 2,
     name: 'Budgets',
-    icon: <ChartDonut />,
+    icon: <Icons.ChartDonut />,
     link: '/budgets',
   },
   {
     id: 3,
     name: 'Pots',
-    icon: <Jar />,
+    icon: <Icons.Jar />,
     link: '/pots',
   },
   {
     id: 4,
     name: 'Recurring bills',
-    icon: <Receipt />,
+    icon: <Icons.Receipt />,
     link: '/recurring-bills',
   },
 ] as const
