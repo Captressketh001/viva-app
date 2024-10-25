@@ -6,37 +6,38 @@ import React from 'react'
 
 import { cn } from '@/app/lib/utils'
 
-import { ChartPieIcon, HomeIcon, ArrowsUpDownIcon, DocumentCurrencyDollarIcon, WalletIcon, ArrowLeftCircleIcon } from '@heroicons/react/24/solid'
+import { ChartPieIcon, HomeIcon, ArrowsUpDownIcon, DocumentCurrencyDollarIcon, WalletIcon, ArrowLeftCircleIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 const NAV_LINKS = [
   {
     id: 0,
     name: 'Overview',
     icon: <HomeIcon className="w-5 h-5"/> ,
-    link: '/',
+    link: '/dashboard',
   },
   {
     id: 1,
     name: 'Transactions',
-    icon: <ArrowsUpDownIcon className="w-5 h-5"/>,
+    icon: <DocumentCurrencyDollarIcon className="w-5 h-5"/>,
     link: '/transactions',
   },
+  // <ArrowsUpDownIcon className="w-5 h-5"/>
   {
     id: 2,
-    name: 'Budgets',
-    icon: <ChartPieIcon className="w-5 h-5" />,
-    link: '/budgets',
+    name: 'Customers',
+    icon: <UserCircleIcon className="w-5 h-5" />,
+    link: '/customers',
   },
   {
     id: 3,
-    name: 'Pots',
-    icon: <DocumentCurrencyDollarIcon className="w-5 h-5"/>,
-    link: '/pots',
+    name: 'Invoices',
+    icon: <WalletIcon className="w-5 h-5"/>,
+    link: '/invoice',
   },
   {
     id: 4,
-    name: 'Recurring bills',
-    icon: <WalletIcon className="w-5 h-5"/>,
-    link: '/recurring-bills',
+    name: 'Sales',
+    icon: <ChartPieIcon className="w-5 h-5"/>,
+    link: '/sales',
   },
 ] as const
 type NavLinkType = (typeof NAV_LINKS)[number]

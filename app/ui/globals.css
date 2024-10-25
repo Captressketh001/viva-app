@@ -24,7 +24,7 @@
 
   
 
-@media (prefers-color-scheme: dark) {
+ @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -34,11 +34,19 @@
 
 body {
   margin: 0 auto;
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
+}
+.button-bg{
+  background: var(--bg-button);
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }

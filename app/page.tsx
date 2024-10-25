@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { Button } from '@/app/ui/button'
 import Link from 'next/link';
 import { lusitana } from '@/app/ui/font';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { faXTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { IconProp } from '@fortawesome/fontawesome-svg-core'
+// import { faXTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/app/context/GlobalProvider'
 import { redirect } from 'next/navigation'
@@ -30,7 +30,7 @@ export default function Home() {
             height={24}
             priority
           />
-          <Button onClick={() => router.push('/login')}>Request Beta Access</Button>
+          <Button className='button-bg' onClick={() => router.push('/login')}>Request Beta Access</Button>
         </div>
         <div className='flex flex-col w-[85%] lg:w-[80%] lg:flex-row  items-center gap-10 sm:mt-5'>
           <div className='flex flex-col md:flex-row lg:w-4/5 gap-4'>
@@ -40,8 +40,7 @@ export default function Home() {
               </p>
               <p className='md:w-3/4 text-justify'>Say goodbye to messy spreadsheets and hello to Viva, the all-in-one app built for busy service providers like you.
               </p>
-              <Button onClick={() => router.push('/login')} className='flex items-center gap-5 self-start rounded-lg bg-white-500 px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-blue-400 md:text-base'>Request Beta Access</Button>
-
+              <Button  onClick={() => router.push('/login')} className='flex  self-start  button-bg'>Request Beta Access</Button>
             </div>
             <div className='md:relative md:-z-50 lg:right-24'>
               <Image
@@ -122,10 +121,10 @@ export default function Home() {
           />
           <p>Copyright &copy; {getCurrentYear()} Viva </p>
           <div className='flex gap-12'>
-            <Link href='https://twitter.com/cap_keth' target='_blank'><FontAwesomeIcon icon={faXTwitter as IconProp} /></Link>
+            {/* <Link href='https://twitter.com/cap_keth' target='_blank'><FontAwesomeIcon icon={faXTwitter as IconProp} /></Link>
             
            <Link href='https://www.linkedin.com/in/oluwakemi-omoyeni/' target='_blank'><FontAwesomeIcon icon={faLinkedin as IconProp} /></Link> 
-           <Link href='https://www.youtube.com/@cap_keth' target='_blank'><FontAwesomeIcon icon={faYoutube as IconProp} /></Link> 
+           <Link href='https://www.youtube.com/@cap_keth' target='_blank'><FontAwesomeIcon icon={faYoutube as IconProp} /></Link>  */}
           </div>
         </div>
 

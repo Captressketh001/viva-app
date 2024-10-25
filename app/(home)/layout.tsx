@@ -8,7 +8,7 @@ export default function DashboardLayout({
     children: React.ReactNode;
   }) {
     return (
-      <div className="flex w-full h-full ">
+      <div className="flex w-full h-full bg-gray-200">
         <MobileSideNav />
         <SideNav /> 
         <div className="flex-1 px-4 py-6 md:px-10 md:py-8  overflow-scroll">
