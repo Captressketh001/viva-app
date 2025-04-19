@@ -31,6 +31,15 @@ const config: Config = {
   			'grey-500': '#696868',
   			'grey-300': '#B3B3B3',
   			'grey-100': '#F2F2F2',
+			'edit-btn-text': 'hsl(231, 37%, 63%)',
+			'edit-btn-bg': 'hsl(228, 71%, 99%)',
+			'edit-btn-hover': 'hsl(231, 73%, 93%)',
+			'card-bg': 'hsl(228, 71%, 99%)',
+			'card-primary': 'hsl(231, 20%, 27%)',
+			error: 'hsl(0, 80%, 63%)',
+			dark: 'hsl(233, 30%, 11%)',
+			'error-active':' hsla(0, 80%, 63%, 0.8)',
+			'draft-btn-bg': 'hsl(231, 20%, 27%)',
   			success: {}
   		},
   		content:{

@@ -25,13 +25,13 @@ const NAV_LINKS = [
     id: 2,
     name: 'Customers',
     icon: <UserCircleIcon className="w-5 h-5" />,
-    link: '/customers',
+    link: '/customer',
   },
   {
     id: 3,
     name: 'Invoices',
     icon: <WalletIcon className="w-5 h-5"/>,
-    link: '/invoice',
+    link: '/invoices',
   },
   {
     id: 4,

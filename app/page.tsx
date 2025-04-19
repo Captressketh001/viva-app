@@ -12,12 +12,12 @@ import { useAuth } from '@/app/context/GlobalProvider'
 import { redirect } from 'next/navigation'
 
 export default function Home() {
-  const { isLoading, isLoggedIn} = useAuth()
+  // const { isLoading, isLoggedIn} = useAuth()
   const router = useRouter()
   const getCurrentYear = () => {
     return new Date().getFullYear()
   }
-  if (!isLoading && isLoggedIn) return redirect('/')
+  // if (!isLoading && isLoggedIn) return redirect('/')
   return (
     <>
       <main className="flex min-h-screen flex-col items-center mx-auto m-4">
